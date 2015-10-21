@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <title>example</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+    <meta name="keywords" content="tt-cc"/>
+    <meta name="description" content="tt-cc"/>
+    <meta http-equiv="Cache-Control" content="no-transform "/>
+    <link rel="shortcut icon" href="./favicon.ico">
+    <link rel="bookmark" href="./favicon.ico">
+
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/base-min.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+    <script src="src/js/ColorChange.js"></script>
+
+    <!-- code highlight-->
+    <script type="text/javascript" src="third-lib/prism/prism.js"></script>
+    <link href="third-lib/prism/prism.css" type="text/css" rel="stylesheet"/>
+
+    <style type="text/css">
+        body {
+            background-color: #5B8FEF;
+            font-size: 1em;
+            font-family:  Lato, "Microsoft YaHei", sans-serif;
+        }
+
+        pre {
+            overflow: hidden !important;
+            padding: 0 !important;
+            padding-top: 20px !important;
+        }
+
+        code {
+            display: block;
+            padding: 0;
+            margin: -50px -120px;
+        }
+
+        .paper-container {
+            margin: 0 auto;
+            width: 80%;
+            max-width: 999px;
+        }
+
+        .paper-wrapper {
+            width: 100%;
+            padding: 20px 60px;
+            background-color: #fff;
+            margin: 4em 0;
+            box-shadow: 0 0 10px 5px #635E5E;
+            position: relative;
+            box-sizing: border-box;
+        }
+
+        .paper-title {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            font-size: 1.5em;
+            padding: 0.5em 0;
+        }
+
+        .paper-div {
+            width: 100%;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+<div class="paper-container">
+    <div class="paper-wrapper">
+        <div class="paper-title">options:</div>
+        <pre>
+            <code class="language-javascript">
+                {
+                    auto: false,//是否自动开始
+                    type: "text",//目标变色类型：text、background、border
+                    changeChildren: false,//是否以所有子元素作为变色对象
+                    randomcolor: false,//是否随机生成颜色
+                    interval: 200,//变色频率
+                    normalcolor: '#000',//目标原始颜色
+                    colors: [
+                        '#00ffff',
+                        '#f1c40f',
+                        '#3498db',
+                        '#000000',
+                        '#1abc9c',
+                        '#e67e22',
+                        '#95a5a6',
+                        '#ffffff',
+                        '#2ecc71',
+                        '#f00000'
+                    ],//指定颜色集合，randomcolor=false时有效
+                    randomshow: false,//是否随机展示指定的颜色集合
+                    pause: true//是否支持点击目标暂停/恢复
+                }
+            </code>
+       </pre>
+
+        <div class="paper-title">example1:</div>
+        <div class="paper-div">
+            <div id="deme1">我的文字颜色在按默认设置顺序改变...</div>
+        </div>
+        <pre>
+            <code class="language-javascript">
+                default settings
+            </code>
+        </pre>
+
+        <div class="paper-title">example2:</div>
+        <div class="paper-div">
+            <div id="deme2" style="border:2px solid red">我的边框色在按默认设置随机改变...</div>
+        </div>
+        <pre>
+            <code class="language-javascript">
+                {
+                    type: "border",
+                    randomshow: true
+                }
+            </code>
+        </pre>
+
+        <div class="paper-title">example3:</div>
+        <div class="paper-div">
+            <div id="deme3"><span>开</span><span>机</span><span>中 </span> <span>请</span><span>稍</span><span>后</span>
+                <span>。</span><span>。</span><span>。</span></div>
+        </div>
+        <pre>
+            <code class="language-javascript">
+                {
+                    changeChildren: true,
+                    colors: [
+                        '#888',
+                        '#ccc',
+                        '#888',
+                        '#333',
+                        '#333',
+                        '#333',
+                        '#333',
+                        '#333',
+                        '#333'
+                    ]
+                }
+            </code>
+        </pre>
+    </div>
+</div>
+<script type="text/javascript">
+    $("#deme1").colorChange();
+    $("#deme2").colorChange({
+        type: "border",
+        randomshow: true
+    });
+    $("#deme3").colorChange({
+        changeChildren: true,
+        colors: [
+            '#888',
+            '#ccc',
+            '#888',
+            '#333',
+            '#333',
+            '#333',
+            '#333',
+            '#333',
+            '#333'
+        ]
+    });
+</script>
+</body>
+</html>
