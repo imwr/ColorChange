@@ -94,7 +94,7 @@
         return this.each(function () {
             var ui = $._data(this, "ColorChange");
             if (!ui) {
-                var opts = $.extend({}, defaults, method);
+                var opts = $.extend({}, defaults, typeof method == 'object' && method);
                 ui = new ColorChange(this, opts);
                 $._data(this, "ColorChange", ui);
             }
