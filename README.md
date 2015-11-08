@@ -26,4 +26,4 @@ pause: true//是否支持点击目标暂停/恢复
 ```
 
 ###demo###
-See [here](http://tt-cc.cn/web/ColorChange/example.html)
+See [here](http://tt-cc.cn/front-end/item/13-colorchange)
