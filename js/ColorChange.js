@@ -1,8 +1,9 @@
-/**
- * @author wr
+/* =========================================================== *
+ * @site http:tt-cc.cn
  * @email mvpjly@163.com
- * @date 2014/10/19
- */
+ * Copyright 2014 imwr
+ * Licensed under the Apache License, Version 2.0 (the "License")
+ * =========================================================== */
 ;
 (function ($) {
     "use strict";
