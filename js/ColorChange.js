@@ -93,6 +93,7 @@
         pause: true//是否支持点击目标暂停/恢复
     };
     $.fn.colorChange = function (method) {
+        var args = arguments;
         return this.each(function () {
             var ui = $._data(this, "ColorChange");
             if (!ui) {
@@ -101,7 +102,7 @@
                 $._data(this, "ColorChange", ui);
             }
             if (typeof method === "string" && typeof ui[method] == "function") {
-                ui[method].apply(ui, arguments);
+                ui[method].apply(ui, Array.prototype.slice.call(args, 1));
             }
         });
     };
