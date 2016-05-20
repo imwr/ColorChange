@@ -12,13 +12,13 @@
     <meta name="keywords" content="tt-cc"/>
     <meta name="description" content="tt-cc"/>
     <meta http-equiv="Cache-Control" content="no-transform "/>
-    <link rel="shortcut icon" href="https://imwr.github.com/resources/favicon.ico">
-    <link rel="bookmark" href="https://imwr.github.com/resources/favicon.ico">
+    <link rel="shortcut icon" href="http://imwr.github.io/resources/favicon.ico">
+    <link rel="bookmark" href="http://imwr.github.io/resources/favicon.ico">
 
-    <link rel="stylesheet" type="text/css" href="https://imwr.github.com/resources/css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="https://imwr.github.com/resources/css/github-example.css">
-    <script type="text/javascript" src="https://imwr.github.com/resources/js/jquery-1.11.3.min.js"></script>
-    <link type="text/css" rel="stylesheet" href="https://imwr.github.com/resources/syntax/shCoreDefault.css"/>
+    <link rel="stylesheet" type="text/css" href="http://imwr.github.io/resources/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="http://imwr.github.io/resources/css/github-example.css">
+    <script type="text/javascript" src="http://imwr.github.io/resources/js/jquery-1.11.3.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="http://imwr.github.io/resources/syntax/shCoreDefault.css"/>
 
     <script src="js/ColorChange.js"></script>
 </head>
@@ -132,9 +132,9 @@
         </tbody>
     </table>
 </section>
-<script type="text/javascript" src="https://imwr.github.com/resources/syntax/shCore.js"></script>
-<script type="text/javascript" src="https://imwr.github.com/resources/syntax/shBrushJScriptAndXml.js"></script>
-<script type="text/javascript" src="https://imwr.github.com/resources/js/github-example.js"></script>
+<script type="text/javascript" src="http://imwr.github.io/resources/syntax/shCore.js"></script>
+<script type="text/javascript" src="http://imwr.github.io/resources/syntax/shBrushJScriptAndXml.js"></script>
+<script type="text/javascript" src="http://imwr.github.io/resources/js/github-example.js"></script>
 <script type="text/javascript" id="js1">
     $("#demo1").colorChange();
 </script>
@@ -168,6 +168,44 @@
     }).on("click", function () {
         $(this).colorChange("start");
     });
+</script>
+<section class="main-inner">
+    <br/>
+    <!-- JiaThis Button BEGIN -->
+    <div class="jiathis_style">
+        <span class="jiathis_txt">分享到：</span>
+        <a class="jiathis_button_weixin">微信</a>
+        <a class="jiathis_button_tsina">新浪微博</a>
+        <a class="jiathis_button_qzone">QQ空间</a>
+        <a class="jiathis_button_cqq">QQ好友</a>
+        <a class="jiathis_button_fav">收藏夹</a>
+        <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis"
+           target="_blank">更多</a>
+    </div>
+    <script type="text/javascript">
+        var jiathis_config = {
+            summary: "",
+            shortUrl: false,
+            hideMore: false
+        }
+    </script>
+    <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+    <!-- JiaThis Button END -->
+    <br/>
+    <br/>
+    <div id="disqus_thread"></div>
+</section>
+<script>
+    var disqus_config = function () {
+        this.page.url = location.href; // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = location.pathname; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function () { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = '//tt-cc.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
 </script>
 </body>
 </html>

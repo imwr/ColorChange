@@ -24,6 +24,7 @@ colors: [
 randomshow: false,//是否随机展示colors指定的颜色集合
 pause: true//是否支持点击目标暂停/恢复
 ```
-
+<!--
 ###demo###
 See [here](http://tt-cc.cn/front-end/jquery-plugins/colorchange)
+-->
