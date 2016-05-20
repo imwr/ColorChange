@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <title>Color Change —— 颜色变换插件，可改变文字、背景、边框颜色</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+    <meta name="keywords" content="tt-cc"/>
+    <meta name="description" content="tt-cc"/>
+    <meta http-equiv="Cache-Control" content="no-transform "/>
+    <link rel="shortcut icon" href="https://imwr.github.com/resources/favicon.ico">
+    <link rel="bookmark" href="https://imwr.github.com/resources/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="https://imwr.github.com/resources/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="https://imwr.github.com/resources/css/github-example.css">
+    <script type="text/javascript" src="https://imwr.github.com/resources/js/jquery-1.11.3.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://imwr.github.com/resources/syntax/shCoreDefault.css"/>
+
+    <script src="js/ColorChange.js"></script>
+</head>
+<body>
+<header>
+    <div class="main-inner">
+        <a href="https://github.com/imwr/ColorChange" target="_blank" class="button">
+            <small>View project on</small>
+            GitHub</a>
+
+        <h1>Imwr</h1>
+    </div>
+</header>
+<section class="main-inner">
+    <div class="paper-title">Demo1:</div>
+    <div class="paper-div">
+        <div id="demo1">我的文字颜色在按默认设置顺序改变...</div>
+    </div>
+    <div class="paper-sep"></div>
+
+    <div class="paper-title">Demo2:</div>
+    <div class="paper-div">
+        <div id="demo2" style="border:2px solid red;padding: 4px">我的边框色在按默认设置随机改变...</div>
+    </div>
+    <div class="paper-sep"></div>
+
+    <div class="paper-title">Demo3:</div>
+    <div class="paper-div">
+        <div id="demo3"><span>开</span><span>机</span><span>中 </span> <span>请</span><span>稍</span><span>后</span>
+            <span>。</span><span>。</span><span>。</span></div>
+    </div>
+    <div class="paper-sep"></div>
+
+    <div class="paper-title">Demo4:</div>
+    <div class="paper-div">
+        <div id="demo4">点击我开始变色</div>
+    </div>
+    <div class="paper-sep"></div>
+
+    <div class="paper-title paper-specil" id="options">options:</div>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th width="15%">参数名</th>
+            <th width="15%">类型</th>
+            <th width="20%">默认值</th>
+            <th width="50%">说明</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>auto</td>
+            <td>boolean</td>
+            <td>true</td>
+            <td>是否自动开始变色</td>
+        </tr>
+        <tr>
+            <td>type</td>
+            <td>string</td>
+            <td>text</td>
+            <td>目标变色类型：text、background、border</td>
+        </tr>
+        <tr>
+            <td>changeChildren</td>
+            <td>boolean</td>
+            <td>false</td>
+            <td>是否以所有子元素作为变色对象，true且innerHTML为纯文字时，单个字符将被添加span标签</td>
+        </tr>
+        <tr>
+            <td>randomcolor</td>
+            <td>boolean</td>
+            <td>false</td>
+            <td>是否随机生成颜色</td>
+        </tr>
+        <tr>
+            <td>normalcolor</td>
+            <td>string</td>
+            <td>#000</td>
+            <td>pause恢复时目标的颜色</td>
+        </tr>
+        <tr>
+            <td>colors</td>
+            <td>array</td>
+            <td>[
+                '#00ffff',
+                '#f1c40f',
+                '#3498db',
+                '#000000',
+                '#1abc9c',
+                '#e67e22',
+                '#95a5a6',
+                '#ffffff',
+                '#2ecc71',
+                '#f00000'
+                ]
+            </td>
+            <td>指定颜色集合，randomcolor=false时有效</td>
+        </tr>
+        <tr>
+            <td>randomshow</td>
+            <td>boolean</td>
+            <td>false</td>
+            <td>是否随机展示colors指定的颜色集合</td>
+        </tr>
+        <tr>
+            <td>pause</td>
+            <td>boolean</td>
+            <td>true</td>
+            <td>是否支持点击目标暂停/恢复</td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+<script type="text/javascript" src="https://imwr.github.com/resources/syntax/shCore.js"></script>
+<script type="text/javascript" src="https://imwr.github.com/resources/syntax/shBrushJScriptAndXml.js"></script>
+<script type="text/javascript" src="https://imwr.github.com/resources/js/github-example.js"></script>
+<script type="text/javascript" id="js1">
+    $("#demo1").colorChange();
+</script>
+<script type="text/javascript" id="js2">
+    $("#demo2").colorChange({
+        type: "border",
+        randomshow: true
+    });
+</script>
+<script type="text/javascript" id="js3">
+    $("#demo3").colorChange({
+        changeChildren: true,
+        colors: [
+            '#888',
+            '#ccc',
+            '#888',
+            '#333',
+            '#333',
+            '#333',
+            '#333',
+            '#333',
+            '#333'
+        ]
+    });
+</script>
+<script type="text/javascript" id="js4">
+    $("#demo4").colorChange({
+        changeChildren: true,
+        auto: false,
+        pause: false
+    }).on("click", function () {
+        $(this).colorChange("start");
+    });
+</script>
+</body>
+</html>
