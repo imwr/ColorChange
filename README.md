@@ -26,5 +26,5 @@ pause: true//是否支持点击目标暂停/恢复
 ```
 <!--
 ###demo###
-See [here](http://tt-cc.cn/front-end/jquery-plugins/colorchange)
+See [here](http://tt-cc.cc/front-end/jquery-plugins/colorchange)
 -->
